@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">mobpro!-compose</string>
+    <string name="app_name">Galeri Hewan</string>
+    <string name="gambar">Gambar</string>
+    <string name="lanjut">Lanjut</string>
 </resources>
