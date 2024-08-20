@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GaleriHewan(data[index]) {
+                    GaleriLampu(data[index]) {
                         index = if (index == data.size-1) 0 else index+1
                     }
                 }
@@ -53,13 +53,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun getData() :List<Hewan> {
+    private fun getData() :List<Lampu> {
         return  listOf(
-            Hewan("Ayam", R.drawable.ayam),
-            Hewan("Bebek", R.drawable.bebek),
-            Hewan("Domba", R.drawable.domba),
-            Hewan("Kambing", R.drawable.kambing),
-            Hewan("Sapi", R.drawable.sapi),
+            Lampu("Hidup", R.drawable.hidup),
+            Lampu("Mati", R.drawable.mati),
+
         )
     }
 }
@@ -84,7 +82,7 @@ fun MainScreen(content: @Composable (Modifier) -> Unit) {
 }
 
 @Composable
-fun GaleriHewan(hewan: Hewan, onClick: () -> Unit = {}) {
+fun GaleriLampu(lampu: Lampu, onClick: () -> Unit = {}) {
     MainScreen { modifier ->
         Column(
             modifier = modifier
@@ -94,13 +92,13 @@ fun GaleriHewan(hewan: Hewan, onClick: () -> Unit = {}) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(hewan.imagesResId),
-                contentDescription = stringResource(R.string.gambar, hewan.nama),
+                painter = painterResource(lampu.imagesResId),
+                contentDescription = stringResource(R.string.gambar, lampu.nama),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.size(132.dp)
             )
             Text(
-                text = hewan.nama,
+                text = lampu.nama,
                 style = MaterialTheme.typography.headlineLarge,
                 modifier = Modifier.padding(top = 16.dp)
             )
@@ -122,6 +120,6 @@ fun GaleriHewan(hewan: Hewan, onClick: () -> Unit = {}) {
 @Composable
 fun ScreenPreview() {
     Mobpro1composeTheme {
-        GaleriHewan(Hewan("Ayam", R.drawable.ayam))
+        GaleriLampu(Lampu("Hidup", R.drawable.hidup))
     }
 }

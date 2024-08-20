@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Galeri Hewan</string>
+    <string name="app_name">Smart Lamp</string>
     <string name="gambar">Gambar</string>
-    <string name="lanjut">Lanjut</string>
+    <string name="lanjut">ON/OFF</string>
 </resources>
