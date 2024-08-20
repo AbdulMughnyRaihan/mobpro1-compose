@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">mobpro!-compose</string>
-    <string name="count">Count +1</string>
+    <string name="app_name">Counter App</string>
+    <string name="count">-</string>
+    <string name="count2">+</string>
 </resources>

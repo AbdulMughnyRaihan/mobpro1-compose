@@ -7,9 +7,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -77,19 +81,36 @@ fun Counter() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = number.toString(),
-                style = MaterialTheme.typography.displayLarge
-            )
-            Button(
-                onClick = { number++ },
+            Row(
                 modifier = Modifier
-                    .fillMaxWidth(0.5f)
-                    .padding(top = 16.dp),
-                contentPadding = PaddingValues(16.dp)
+                    .wrapContentSize()
+                    .padding(top = 0.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-               Text(text = stringResource(R.string.count))
+                Button(
+                    onClick = { if (number > 0)number-- },
+                    modifier = Modifier
+                        .padding(end = 16.dp)
+                        .size(60.dp),
+                    contentPadding = PaddingValues(8.dp)
+                ) {
+                    Text(text = stringResource(R.string.count))
+                }
+                Text(
+                    text = number.toString(),
+                    style = MaterialTheme.typography.displayLarge,
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                )
+                Button(
+                    onClick = { number++ },
+                    modifier = Modifier.padding(start = 16.dp).size(60.dp),
+                    contentPadding = PaddingValues(8.dp)
+                ) {
+                    Text(text = stringResource(R.string.count2 ))
+                }
+
             }
+
         }
     }
 }
